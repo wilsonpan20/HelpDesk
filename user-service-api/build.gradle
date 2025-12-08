@@ -1,0 +1,23 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.6'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.willdev'
+version = '1.1.7'
+description = 'Demo project for Spring Boot'
+
+
+apply from: 'gradle/plugins/dependencies.gradle'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
