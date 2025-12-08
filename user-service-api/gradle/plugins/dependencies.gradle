@@ -11,7 +11,6 @@ dependencies {
     // Biblioteca de código comum
      implementation 'com.willdev:hd-commons-lib:1.0.0'
 
-
     // Starter para desenvolvimento de aplicativos web com Spring Boot
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
