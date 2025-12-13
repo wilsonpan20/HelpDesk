@@ -17,7 +17,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponse findById(String id) {
-        return userMapper.fromEntity(repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Object not found. Id: " + id + ", Type: " + UserResponse.class.getSimpleName())));
+        return userMapper.fromEntity(repository.findById(id).orElseThrow(
+                () -> new ResourceNotFoundException("Object not found. Id: " + id + ", Type: " + UserResponse.class.getSimpleName())));
     }
 
 }

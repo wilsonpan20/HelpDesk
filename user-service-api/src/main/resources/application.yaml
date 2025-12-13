@@ -5,5 +5,8 @@ spring:
    mongodb:
      uri: ${DB_MONGO_URI}
      auto-index-creation: true
-    # Conexão com o MongoDB local
-   #uri: mongodb://localhost:27017/helpdeskdb
+springdoc:
+  openapi:
+    title: 'User Service API'
+    description: 'Component responsible for user management'
+    version: '1.0.0'
