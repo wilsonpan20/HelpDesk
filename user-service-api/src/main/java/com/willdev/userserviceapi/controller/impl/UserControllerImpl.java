@@ -2,7 +2,6 @@ package com.willdev.userserviceapi.controller.impl;
 
 import com.willdev.hdcommonslib.models.responses.UserResponse;
 import com.willdev.userserviceapi.controller.UserController;
-import com.willdev.userserviceapi.entity.User;
 import com.willdev.userserviceapi.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,6 @@ public class UserControllerImpl implements UserController {
 
     @Override
     public ResponseEntity<UserResponse> findById(String id) {
-        UserResponse user = userService.findById(id);
-        return ResponseEntity.ok(user);
+        return ResponseEntity.ok(userService.findById(id));
     }
 }

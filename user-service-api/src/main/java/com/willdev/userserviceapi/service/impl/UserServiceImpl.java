@@ -1,7 +1,7 @@
 package com.willdev.userserviceapi.service.impl;
 
+import com.willdev.hdcommonslib.models.exceptions.ResourceNotFoundException;
 import com.willdev.hdcommonslib.models.responses.UserResponse;
-import com.willdev.userserviceapi.entity.User;
 import com.willdev.userserviceapi.mapper.UserMapper;
 import com.willdev.userserviceapi.repository.UserRepository;
 import com.willdev.userserviceapi.service.UserService;
@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponse findById(String id) {
-        return userMapper.fromEntity(repository.findById(id).orElse(null));
+        return userMapper.fromEntity(repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Object not found. Id: " + id + ", Type: " + UserResponse.class.getSimpleName())));
     }
 
 }
