@@ -4,11 +4,11 @@ import java.time.LocalDateTime;
 
 public class StandardError {
 
-    private LocalDateTime timestamp;
-    private Integer status;
-    private String error;
-    private String message;
-    private String path;
+    private final LocalDateTime timestamp;
+    private final Integer status;
+    private final String error;
+    private final String message;
+    private final String path;
 
     private StandardError(Builder builder) {
         this.timestamp = builder.timestamp;
