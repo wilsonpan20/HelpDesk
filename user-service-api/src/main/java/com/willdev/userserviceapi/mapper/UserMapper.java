@@ -1,8 +1,8 @@
 package com.willdev.userserviceapi.mapper;
 
-import com.willdev.hdcommonslib.models.requests.CreateUserRequest;
-import com.willdev.hdcommonslib.models.responses.UserResponse;
 import com.willdev.userserviceapi.entity.User;
+import models.requests.CreateUserRequest;
+import models.responses.UserResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
