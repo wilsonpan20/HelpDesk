@@ -1,5 +1,8 @@
 package com.willdev.userserviceapi.controller;
 
+import com.willdev.hdcommonslib.models.responses.models.exceptions.StandardError;
+import com.willdev.hdcommonslib.models.responses.models.requests.CreateUserRequest;
+import com.willdev.hdcommonslib.models.responses.models.responses.UserResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -7,9 +10,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import models.exceptions.StandardError;
-import models.requests.CreateUserRequest;
-import models.responses.UserResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,12 +1,12 @@
 package com.willdev.userserviceapi.service.impl;
 
+import com.willdev.hdcommonslib.models.responses.models.exceptions.ResourceNotFoundException;
+import com.willdev.hdcommonslib.models.responses.models.requests.CreateUserRequest;
+import com.willdev.hdcommonslib.models.responses.models.responses.UserResponse;
 import com.willdev.userserviceapi.mapper.UserMapper;
 import com.willdev.userserviceapi.repository.UserRepository;
 import com.willdev.userserviceapi.service.UserService;
 import lombok.RequiredArgsConstructor;
-import models.exceptions.ResourceNotFoundException;
-import models.requests.CreateUserRequest;
-import models.responses.UserResponse;
 import org.springframework.stereotype.Service;
 
 @Service

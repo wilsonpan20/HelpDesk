@@ -1,10 +1,10 @@
 package com.willdev.userserviceapi.controller.exceptions;
 
 
+import com.willdev.hdcommonslib.models.responses.models.exceptions.ResourceNotFoundException;
+import com.willdev.hdcommonslib.models.responses.models.exceptions.StandardError;
+import com.willdev.hdcommonslib.models.responses.models.exceptions.ValidationException;
 import jakarta.servlet.http.HttpServletRequest;
-import models.exceptions.ResourceNotFoundException;
-import models.exceptions.StandardError;
-import models.exceptions.ValidationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
