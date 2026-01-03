@@ -5,6 +5,7 @@ import com.willdev.hdcommonslib.models.responses.models.exceptions.ResourceNotFo
 import com.willdev.hdcommonslib.models.responses.models.exceptions.StandardError;
 import com.willdev.hdcommonslib.models.responses.models.exceptions.ValidationException;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -36,4 +37,11 @@ public class ControllerExceptionHandler {
 
         return ResponseEntity.badRequest().body(error);
     }
+
+    @ExceptionHandler (DataIntegrityViolationException.class)
+    ResponseEntity<StandardError> handleDataIntegrityViolationException(final DataIntegrityViolationException ex, final HttpServletRequest request) {
+
+        return ResponseEntity.status(BAD_REQUEST).body(StandardError.builder().timestamp(now()).status(BAD_REQUEST.value()).error(BAD_REQUEST.getReasonPhrase()).message(ex.getMessage()).path(request.getRequestURI()).build());
+    }
+
 }

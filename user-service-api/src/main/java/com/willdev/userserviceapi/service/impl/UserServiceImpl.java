@@ -7,6 +7,7 @@ import com.willdev.userserviceapi.mapper.UserMapper;
 import com.willdev.userserviceapi.repository.UserRepository;
 import com.willdev.userserviceapi.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,7 +24,15 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(final CreateUserRequest request) {
+        verifyEmailAlreadyExistts(request.email(), null);
         repository.save(userMapper.fromRequest(request));
+    }
+
+    private void verifyEmailAlreadyExistts(final String email, final String id) {
+        repository.findByEmail(email).filter(user -> !user.getId().equals(id)).ifPresent(user -> {
+            throw new DataIntegrityViolationException("Email [" + email + "] already exists: ");
+        });
+
     }
 
 }
